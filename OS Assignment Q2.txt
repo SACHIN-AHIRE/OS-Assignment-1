@@ -1,0 +1,282 @@
+Problem 2: Read the instructions carefully and answer accordingly. If there is
+any need to insert some data then do that as well.
+a. Suppose you have a file named "data.txt" containing important information. Display the
+first 10 lines of this file to quickly glance at its contents using a command.
+b. Now, to check the end of the file for any recent additions, display the last 5 lines of
+"data.txt" using another command.
+c. In a file named "numbers.txt," there are a series of numbers. Display the first 15 lines of
+this file to analyze the initial data set.
+d. To focus on the last few numbers of the dataset, display the last 3 lines of "numbers.txt".
+e. Imagine you have a file named "input.txt" with text content. Use a command to translate
+all lowercase letters to uppercase in "input.txt" and save the modified text in a new file
+named "output.txt."
+f. In a file named "duplicate.txt," there are several lines of text, some of which are
+duplicates. Use a command to display only the unique lines from "duplicate.txt."
+g. In a file named "fruit.txt," there is a list of fruits, but some fruits are repeated. Use a
+command to display each unique fruit along with the count of its occurrences in
+"fruit.txt."
+
+
+sachin@DESKTOP-MTQNNVD:~$ mkdir Question2
+sachin@DESKTOP-MTQNNVD:~$ ls
+Grandfather  Question2  Technology  names.txt  snap  test.sh
+sachin@DESKTOP-MTQNNVD:~$ cd Question2
+sachin@DESKTOP-MTQNNVD:~/Question2$ vi data.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ rm vi data.txt
+rm: cannot remove 'vi': No such file or directory
+sachin@DESKTOP-MTQNNVD:~/Question2$ rmdir vi data.txt
+rmdir: failed to remove 'vi': No such file or directory
+rmdir: failed to remove 'data.txt': No such file or directory
+sachin@DESKTOP-MTQNNVD:~/Question2$ vi data.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ sudo rmdir vi data.txt
+[sudo] password for sachin:
+rmdir: failed to remove 'vi': No such file or directory
+rmdir: failed to remove 'data.txt': Not a directory
+sachin@DESKTOP-MTQNNVD:~/Question2$ ll
+total 12
+drwxr-xr-x 2 sachin sachin 4096 Mar  8 23:23 ./
+drwxr-x--- 7 sachin sachin 4096 Mar  8 23:23 ../
+-rw-r--r-- 1 sachin sachin    1 Mar  8 23:23 data.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ ls
+data.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ rm data.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ ls
+sachin@DESKTOP-MTQNNVD:~/Question2$ touch data.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ ls
+data.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ pwd
+/home/sachin/Question2
+sachin@DESKTOP-MTQNNVD:~/Question2$ vi data.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ chmod +x data.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ /data.txt
+-bash: /data.txt: No such file or directory
+sachin@DESKTOP-MTQNNVD:~/Question2$ /vi data.txt
+-bash: /vi: No such file or directory
+sachin@DESKTOP-MTQNNVD:~/Question2$ head -10 data.txt
+#!/bin/bash
+1. I used to ruled the World by Coldplay.
+2. Perfect by Ed Sheeren.
+3. Love Me Like You Do.
+4. my heart will go on.
+5.Brandy love by GOTH.
+6. Hall Of Fame.
+7. I'll be their for You by FRIENDS.
+8. Love Story by Tyolor Swift.
+9. Until I found you.
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat data.txt
+#!/bin/bash
+1. I used to ruled the World by Coldplay.
+2. Perfect by Ed Sheeren.
+3. Love Me Like You Do.
+4. my heart will go on.
+5.Brandy love by GOTH.
+6. Hall Of Fame.
+7. I'll be their for You by FRIENDS.
+8. Love Story by Tyolor Swift.
+9. Until I found you.
+10. Closer by ChainSmoker.
+sachin@DESKTOP-MTQNNVD:~/Question2$ head data.txt
+#!/bin/bash
+1. I used to ruled the World by Coldplay.
+2. Perfect by Ed Sheeren.
+3. Love Me Like You Do.
+4. my heart will go on.
+5.Brandy love by GOTH.
+6. Hall Of Fame.
+7. I'll be their for You by FRIENDS.
+8. Love Story by Tyolor Swift.
+9. Until I found you.
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat data.txt
+#!/bin/bash
+1. I used to ruled the World by Coldplay.
+2. Perfect by Ed Sheeren.
+3. Love Me Like You Do.
+4. my heart will go on.
+5.Brandy love by GOTH.
+6. Hall Of Fame.
+7. I'll be their for You by FRIENDS.
+8. Love Story by Tyolor Swift.
+9. Until I found you.
+10. Closer by ChainSmoker.
+sachin@DESKTOP-MTQNNVD:~/Question2$ head data.txt
+#!/bin/bash
+1. I used to ruled the World by Coldplay.
+2. Perfect by Ed Sheeren.
+3. Love Me Like You Do.
+4. my heart will go on.
+5.Brandy love by GOTH.
+6. Hall Of Fame.
+7. I'll be their for You by FRIENDS.
+8. Love Story by Tyolor Swift.
+9. Until I found you.
+sachin@DESKTOP-MTQNNVD:~/Question2$ tail -5 data.txt
+6. Hall Of Fame.
+7. I'll be their for You by FRIENDS.
+8. Love Story by Tyolor Swift.
+9. Until I found you.
+10. Closer by ChainSmoker.
+sachin@DESKTOP-MTQNNVD:~/Question2$ man cat >
+-bash: syntax error near unexpected token `newline'
+sachin@DESKTOP-MTQNNVD:~/Question2$ man cat
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat > numbers.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+sachin@DESKTOP-MTQNNVD:~/Question2$ tail -3 numbers.txt
+23
+24
+25
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat >> numbers.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ tail -2 numbers.txt
+24
+25
+sachin@DESKTOP-MTQNNVD:~/Question2$ tail -3 numbers.txt
+23
+24
+25
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat > input.txt
+hello harish
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat input.txt | tr [:lower:] [:upper:]
+HELLO HARISH
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat input.txt | tr [:lower:] [:upper:]
+HELLO HARISH
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat input.txt | tr [:upper:] [:lower:] | mv input.txt output.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ tree
+.
+├── data.txt
+├── numbers.txt
+└── output.txt
+
+0 directories, 3 files
+sachin@DESKTOP-MTQNNVD:~/Question2$ ls
+data.txt  numbers.txt  output.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat output.txt
+hello harish
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat output.txt | tr [:lower:] [:upper:]
+HELLO HARISH
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat output.txt
+hello harish
+sachin@DESKTOP-MTQNNVD:~/Question2$ tr 'a-z' 'A-Z' <input.txt. output.txt
+-bash: input.txt.: No such file or directory
+sachin@DESKTOP-MTQNNVD:~/Question2$ ls
+data.txt  numbers.txt  output.txt
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat output.txt
+hello harish
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat > duplicate.txt
+aa
+aa
+bb
+bb
+cc
+cc
+dd
+ee
+ff
+gg
+hh
+ii
+ii
+jj
+kk
+kk
+ll
+ll
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat duplicate.txt | uniq
+aa
+bb
+cc
+dd
+ee
+ff
+gg
+hh
+ii
+jj
+kk
+ll
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat duplicate.txt
+aa
+aa
+bb
+bb
+cc
+cc
+dd
+ee
+ff
+gg
+hh
+ii
+ii
+jj
+kk
+kk
+ll
+ll
+sachin@DESKTOP-MTQNNVD:~/Question2$ uniq duplicate.txt
+aa
+bb
+cc
+dd
+ee
+ff
+gg
+hh
+ii
+jj
+kk
+ll
+sachin@DESKTOP-MTQNNVD:~/Question2$ uniq -u duplicate.txt
+dd
+ee
+ff
+gg
+hh
+jj
+sachin@DESKTOP-MTQNNVD:~/Question2$ cat > fruit.txt
+Apple
+Apple
+Mango
+Mango
+Grapes
+Grapes
+Banana
+Banana
+Waternelon
+Kiwi
+sachin@DESKTOP-MTQNNVD:~/Question2$ uniq fruit.txt
+Apple
+Mango
+Grapes
+Banana
+Waternelon
+Kiwi
+sachin@DESKTOP-MTQNNVD:~/Question2$ uniq  -c fruit.txt
+      2 Apple
+      2 Mango
+      2 Grapes
+      2 Banana
+      1 Waternelon
+      1 Kiwi

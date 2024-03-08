@@ -1,0 +1,838 @@
+sachin@DESKTOP-MTQNNVD:~$ cd /home
+sachin@DESKTOP-MTQNNVD:/home$ ls
+LinuxAssignment  sachin
+sachin@DESKTOP-MTQNNVD:/home$ cd LinuxAssignment
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ man touch
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ man cat >
+-bash: syntax error near unexpected token `newline'
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ man cat
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ cat > file1.txt
+-bash: file1.txt: Permission denied
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ touch file1.txt
+touch: cannot touch 'file1.txt': Permission denied
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ sudo chmod -R 777 /home/LinuxAssignment
+[sudo] password for sachin:
+Sorry, try again.
+[sudo] password for sachin:
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ rm file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ touch file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ll
+total 8
+drwxrwxrwx 2 root   root   4096 Mar  8 01:50 ./
+drwxr-xr-x 4 root   root   4096 Mar  7 19:48 ../
+-rw-r--r-- 1 sachin sachin    0 Mar  8 01:50 file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ mkdir docs
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+docs  file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ cp file1.txt docs
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+docs  file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ cd docs
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ mv file1.txt file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ chmod 744 file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ll
+total 8
+drwxr-xr-x 2 sachin sachin 4096 Mar  8 01:58 ./
+drwxrwxrwx 3 root   root   4096 Mar  8 01:51 ../
+-rwxr--r-- 1 sachin sachin    0 Mar  8 01:54 file2.txt*
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ chown $USER:$OTHER file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls -l
+total 0
+-rwxr--r-- 1 sachin sachin 0 Mar  8 01:54 file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ man ls
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls *.txt
+file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ cat > file2.txt
+HELLO UBUNTU........::::::
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ pwd date time
+/home/LinuxAssignment/docs
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ cd ..
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+docs  file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls -l
+total 4
+drwxr-xr-x 2 sachin sachin 4096 Mar  8 01:58 docs
+-rw-r--r-- 1 sachin sachin    0 Mar  8 01:50 file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+docs  file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls *.txt
+file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls *.txt -a
+file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls *.txt -R
+file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls -R *.txt
+file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ find . -name"*.txt"
+find: unknown predicate `-name*.txt'
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ find . -name "*.txt"
+./docs/file2.txt
+./file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ grep "Hello"
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ cd..
+cd..: command not found
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ cd ..
+sachin@DESKTOP-MTQNNVD:/home$ cat LinuxAssignment | greap "HELLO"
+cat: LinuxAssignment: Is a directory
+Command 'greap' not found, did you mean:
+  command 'grap' from deb grap (1.46-1)
+  command 'grep' from deb grep (3.7-1build1)
+Try: sudo apt install <deb name>
+sachin@DESKTOP-MTQNNVD:/home$ sudo apt install greap
+[sudo] password for sachin:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+E: Unable to locate package greap
+sachin@DESKTOP-MTQNNVD:/home$ greap "Hello"
+Command 'greap' not found, did you mean:
+  command 'grep' from deb grep (3.7-1build1)
+  command 'grap' from deb grap (1.46-1)
+Try: sudo apt install <deb name>
+sachin@DESKTOP-MTQNNVD:/home$ sudo apt install grap
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  fontconfig fontconfig-config fonts-droid-fallback fonts-noto-mono
+  fonts-urw-base35 ghostscript groff gsfonts hicolor-icon-theme imagemagick
+  imagemagick-6-common imagemagick-6.q16 libaom3 libavahi-client3
+  libavahi-common-data libavahi-common3 libcairo2 libcups2 libdatrie1 libdav1d5
+  libde265-0 libdeflate0 libdjvulibre-text libdjvulibre21 libfftw3-double3
+  libfontconfig1 libfreetype6 libgomp1 libgraphite2-3 libgs9 libgs9-common
+  libharfbuzz0b libheif1 libice6 libidn12 libijs-0.35 libilmbase25 libjbig0
+  libjbig2dec0 libjpeg-turbo8 libjpeg8 libjxr-tools libjxr0 liblcms2-2 liblqr-1-0
+  libltdl7 libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  libnetpbm10 libopenexr25 libopenjp2-7 libpango-1.0-0 libpangocairo-1.0-0
+  libpangoft2-1.0-0 libpaper-utils libpaper1 libpixman-1-0 libsm6 libthai-data
+  libthai0 libtiff5 libwebp7 libwebpdemux2 libwebpmux3 libwmflite-0.2-7
+  libx265-199 libxaw7 libxcb-render0 libxcb-shm0 libxmu6 libxpm4 libxrender1
+  libxt6 netpbm poppler-data psutils x11-common
+Suggested packages:
+  fonts-noto fonts-freefont-otf | fonts-freefont-ttf fonts-texgyre ghostscript-x
+  imagemagick-doc autotrace cups-bsd | lpr | lprng enscript ffmpeg gimp gnuplot
+  grads graphviz hp2xx html2ps libwmf-bin mplayer povray radiance sane-utils
+  texlive-base-bin transfig ufraw-batch xdg-utils cups-common libfftw3-bin
+  libfftw3-dev liblcms2-utils inkscape poppler-utils fonts-japanese-mincho
+  | fonts-ipafont-mincho fonts-japanese-gothic | fonts-ipafont-gothic
+  fonts-arphic-ukai fonts-arphic-uming fonts-nanum
+The following NEW packages will be installed:
+  fontconfig fontconfig-config fonts-droid-fallback fonts-noto-mono
+  fonts-urw-base35 ghostscript grap groff gsfonts hicolor-icon-theme imagemagick
+  imagemagick-6-common imagemagick-6.q16 libaom3 libavahi-client3
+  libavahi-common-data libavahi-common3 libcairo2 libcups2 libdatrie1 libdav1d5
+  libde265-0 libdeflate0 libdjvulibre-text libdjvulibre21 libfftw3-double3
+  libfontconfig1 libfreetype6 libgomp1 libgraphite2-3 libgs9 libgs9-common
+  libharfbuzz0b libheif1 libice6 libidn12 libijs-0.35 libilmbase25 libjbig0
+  libjbig2dec0 libjpeg-turbo8 libjpeg8 libjxr-tools libjxr0 liblcms2-2 liblqr-1-0
+  libltdl7 libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickwand-6.q16-6
+  libnetpbm10 libopenexr25 libopenjp2-7 libpango-1.0-0 libpangocairo-1.0-0
+  libpangoft2-1.0-0 libpaper-utils libpaper1 libpixman-1-0 libsm6 libthai-data
+  libthai0 libtiff5 libwebp7 libwebpdemux2 libwebpmux3 libwmflite-0.2-7
+  libx265-199 libxaw7 libxcb-render0 libxcb-shm0 libxmu6 libxpm4 libxrender1
+  libxt6 netpbm poppler-data psutils x11-common
+0 upgraded, 79 newly installed, 0 to remove and 79 not upgraded.
+Need to get 38.9 MB of archives.
+After this operation, 143 MB of additional disk space will be used.
+Do you want to continue? [Y/n]
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-droid-fallback all 1:6.0.1r16-1.1build1 [1805 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgomp1 amd64 12.3.0-1ubuntu1~22.04 [126 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy/main amd64 libfftw3-double3 amd64 3.3.8-2ubuntu8 [770 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libfreetype6 amd64 2.11.1+dfsg-1ubuntu0.2 [389 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-urw-base35 all 20200910-1 [6367 kB]
+Get:6 http://archive.ubuntu.com/ubuntu jammy/main amd64 fontconfig-config all 2.13.1-4.2ubuntu5 [29.1 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy/main amd64 libfontconfig1 amd64 2.13.1-4.2ubuntu5 [131 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libaom3 amd64 3.3.0-1 [1748 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libdav1d5 amd64 0.9.2-1 [463 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libde265-0 amd64 1.0.8-1ubuntu0.3 [290 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libx265-199 amd64 3.5-2 [1170 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libheif1 amd64 1.12.0-2build1 [196 kB]
+Get:13 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libjbig0 amd64 2.1-3.1ubuntu0.22.04.1 [29.2 kB]
+Get:14 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjpeg-turbo8 amd64 2.1.2-0ubuntu1 [134 kB]
+Get:15 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjpeg8 amd64 8c-2ubuntu10 [2264 B]
+Get:16 http://archive.ubuntu.com/ubuntu jammy/main amd64 liblcms2-2 amd64 2.12~rc1-2build2 [159 kB]
+Get:17 http://archive.ubuntu.com/ubuntu jammy/universe amd64 liblqr-1-0 amd64 0.4.2-2.1 [27.7 kB]
+Get:18 http://archive.ubuntu.com/ubuntu jammy/main amd64 libltdl7 amd64 2.4.6-15build2 [39.6 kB]
+Get:19 http://archive.ubuntu.com/ubuntu jammy/main amd64 libopenjp2-7 amd64 2.4.0-6 [158 kB]
+Get:20 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdeflate0 amd64 1.10-2 [70.9 kB]
+Get:21 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwebp7 amd64 1.2.2-2ubuntu0.22.04.2 [206 kB]
+Get:22 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libtiff5 amd64 4.3.0-6ubuntu0.8 [185 kB]
+Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwebpdemux2 amd64 1.2.2-2ubuntu0.22.04.2 [9964 B]
+Get:24 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libwebpmux3 amd64 1.2.2-2ubuntu0.22.04.2 [20.5 kB]
+Get:25 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 imagemagick-6-common all 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [63.6 kB]
+Get:26 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libmagickcore-6.q16-6 amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [1788 kB]
+Get:27 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libmagickwand-6.q16-6 amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [328 kB]
+Get:28 http://archive.ubuntu.com/ubuntu jammy/main amd64 poppler-data all 0.4.11-1 [2171 kB]
+Get:29 http://archive.ubuntu.com/ubuntu jammy/main amd64 fontconfig amd64 2.13.1-4.2ubuntu5 [177 kB]
+Get:30 http://archive.ubuntu.com/ubuntu jammy/main amd64 fonts-noto-mono all 20201225-1build1 [397 kB]
+Get:31 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgs9-common all 9.55.0~dfsg1-0ubuntu5.6 [751 kB]
+Get:32 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libavahi-common-data amd64 0.8-5ubuntu5.2 [23.8 kB]
+Get:33 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libavahi-common3 amd64 0.8-5ubuntu5.2 [23.9 kB]
+Get:34 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libavahi-client3 amd64 0.8-5ubuntu5.2 [28.0 kB]
+Get:35 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libcups2 amd64 2.4.1op1-1ubuntu4.7 [264 kB]
+Get:36 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libidn12 amd64 1.38-4ubuntu1 [60.0 kB]
+Get:37 http://archive.ubuntu.com/ubuntu jammy/main amd64 libijs-0.35 amd64 0.35-15build2 [16.5 kB]
+Get:38 http://archive.ubuntu.com/ubuntu jammy/main amd64 libjbig2dec0 amd64 0.19-3build2 [64.7 kB]
+Get:39 http://archive.ubuntu.com/ubuntu jammy/main amd64 libpaper1 amd64 1.1.28build2 [13.8 kB]
+Get:40 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libgs9 amd64 9.55.0~dfsg1-0ubuntu5.6 [5031 kB]
+Get:41 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 ghostscript amd64 9.55.0~dfsg1-0ubuntu5.6 [49.4 kB]
+Get:42 http://archive.ubuntu.com/ubuntu jammy/universe amd64 grap amd64 1.46-1 [129 kB]
+Get:43 http://archive.ubuntu.com/ubuntu jammy/main amd64 x11-common all 1:7.7+23ubuntu2 [23.4 kB]
+Get:44 http://archive.ubuntu.com/ubuntu jammy/main amd64 libice6 amd64 2:1.0.10-1build2 [42.6 kB]
+Get:45 http://archive.ubuntu.com/ubuntu jammy/main amd64 libsm6 amd64 2:1.2.3-1build2 [16.7 kB]
+Get:46 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxt6 amd64 1:1.2.1-1 [177 kB]
+Get:47 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxmu6 amd64 2:1.1.3-3 [49.6 kB]
+Get:48 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libxpm4 amd64 1:3.5.12-1ubuntu0.22.04.2 [36.7 kB]
+Get:49 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxaw7 amd64 2:1.0.14-1 [191 kB]
+Get:50 http://archive.ubuntu.com/ubuntu jammy/universe amd64 groff amd64 1.22.4-8build1 [4104 kB]
+Get:51 http://archive.ubuntu.com/ubuntu jammy/universe amd64 gsfonts all 1:8.11+urwcyr1.0.7~pre44-4.5 [3120 kB]
+Get:52 http://archive.ubuntu.com/ubuntu jammy/main amd64 hicolor-icon-theme all 0.17-2 [9976 B]
+Get:53 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 imagemagick-6.q16 amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [224 kB]
+Get:54 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 imagemagick amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [14.6 kB]
+Get:55 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpixman-1-0 amd64 0.40.0-1ubuntu0.22.04.1 [264 kB]
+Get:56 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-render0 amd64 1.14-3ubuntu3 [16.4 kB]
+Get:57 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-shm0 amd64 1.14-3ubuntu3 [5780 B]
+Get:58 http://archive.ubuntu.com/ubuntu jammy/main amd64 libxrender1 amd64 1:0.9.10-1build4 [19.7 kB]
+Get:59 http://archive.ubuntu.com/ubuntu jammy/main amd64 libcairo2 amd64 1.16.0-5ubuntu2 [628 kB]
+Get:60 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdatrie1 amd64 0.2.13-2 [19.9 kB]
+Get:61 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdjvulibre-text all 3.5.28-2build2 [50.9 kB]
+Get:62 http://archive.ubuntu.com/ubuntu jammy/main amd64 libdjvulibre21 amd64 3.5.28-2build2 [624 kB]
+Get:63 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgraphite2-3 amd64 1.3.14-1build2 [71.3 kB]
+Get:64 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libharfbuzz0b amd64 2.7.4-1ubuntu3.1 [352 kB]
+Get:65 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libilmbase25 amd64 2.5.7-2 [175 kB]
+Get:66 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjxr0 amd64 1.2~git20170615.f752187-5 [174 kB]
+Get:67 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libjxr-tools amd64 1.2~git20170615.f752187-5 [16.0 kB]
+Get:68 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libopenexr25 amd64 2.5.7-1 [780 kB]
+Get:69 http://archive.ubuntu.com/ubuntu jammy/main amd64 libthai-data all 0.1.29-1build1 [162 kB]
+Get:70 http://archive.ubuntu.com/ubuntu jammy/main amd64 libthai0 amd64 0.1.29-1build1 [19.2 kB]
+Get:71 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpango-1.0-0 amd64 1.50.6+ds-2ubuntu1 [230 kB]
+Get:72 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpangoft2-1.0-0 amd64 1.50.6+ds-2ubuntu1 [54.0 kB]
+Get:73 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 libpangocairo-1.0-0 amd64 1.50.6+ds-2ubuntu1 [39.8 kB]
+Get:74 http://archive.ubuntu.com/ubuntu jammy/main amd64 libwmflite-0.2-7 amd64 0.2.12-5ubuntu1 [68.9 kB]
+Get:75 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libmagickcore-6.q16-6-extra amd64 8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3 [70.1 kB]
+Get:76 http://archive.ubuntu.com/ubuntu jammy/universe amd64 libnetpbm10 amd64 2:10.0-15.4 [59.1 kB]
+Get:77 http://archive.ubuntu.com/ubuntu jammy/main amd64 libpaper-utils amd64 1.1.28build2 [8674 B]
+Get:78 http://archive.ubuntu.com/ubuntu jammy/universe amd64 netpbm amd64 2:10.0-15.Selecting previously unselected package fonts-droid-fallback.
+(Reading database ... 24297 files and directories currently installed.)
+Preparing to unpack .../00-fonts-droid-fallback_1%3a6.0.1r16-1.1build1_all.deb ...
+Unpacking fonts-droid-fallback (1:6.0.1r16-1.1build1) ...
+Selecting previously unselected package libfftw3-double3:amd64..................] sgPreparing to unpack .../02-libfftw3-double3_3.3.8-2ubuntu8_amd64.deb ...
+Unpacking libfftw3-double3:amd64 (3.3.8-2ubuntu8) ...
+Selecting previously unselected package libfreetype6:amd64.
+Preparing to unpack .../03-libfreetype6_2.11.1+dfsg-1ubuntu0.2_amd64.deb ...
+Unpacking libfreetype6:amd64 (2.11.1+dfsg-1ubuntu0.2) ..........................]
+Selecting previously unselected package fonts-urw-base35.
+Preparing to unpack .../04-fonts-urw-base35_20200910-1_all.deb ...
+Unpacking fonts-urw-base35 (20200910-1) ...
+Selecting previously unselected package fontconfig-config.......................]
+Preparing to unpack .../05-fontconfig-config_2.13.1-4.2ubuntu5_all.deb ...
+Unpacking fontconfig-config (2.13.1-4.2ubuntu5) ...
+Selecting previously unselected package libfontconfig1:amd64.
+Preparing to unpack .../06-libfontconfig1_2.13.1-4.2ubuntu5_amd64.deb ...
+Unpacking libfontconfig1:amd64 (2.13.1-4.2ubuntu5) .............................]
+Selecting previously unselected package libaom3:amd64.
+Preparing to unpack .../07-libaom3_3.3.0-1_amd64.deb ...
+Unpacking libaom3:amd64 (3.3.0-1) ...
+Selecting previously unselected package libdav1d5:amd64.........................]
+Preparing to unpack .../08-libdav1d5_0.9.2-1_amd64.deb ...
+Unpacking libdav1d5:amd64 (0.9.2-1) ...
+Selecting previously unselected package libde265-0:amd64.
+Preparing to unpack .../09-libde265-0_1.0.8-1ubuntu0.3_amd64.deb ...
+Unpacking libde265-0:amd64 (1.0.8-1ubuntu0.3) ...
+Selecting previously unselected package libx265-199:amd64.......................]
+Preparing to unpack .../10-libx265-199_3.5-2_amd64.deb ...
+Unpacking libx265-199:amd64 (3.5-2) ...
+Selecting previously unselected package libheif1:amd64.
+Preparing to unpack .../11-libheif1_1.12.0-2build1_amd64.deb ...
+Unpacking libheif1:amd64 (1.12.0-2build1) ......................................]
+Selecting previously unselected package libjbig0:amd64.
+Preparing to unpack .../12-libjbig0_2.1-3.1ubuntu0.22.04.1_amd64.deb ...
+Unpacking libjbig0:amd64 (2.1-3.1ubuntu0.22.04.1) ...
+Selecting previously unselected package libjpeg-turbo8:amd64....................]
+Preparing to unpack .../13-libjpeg-turbo8_2.1.2-0ubuntu1_amd64.deb ...
+Unpacking libjpeg-turbo8:amd64 (2.1.2-0ubuntu1) ...
+Selecting previously unselected package libjpeg8:amd64.
+Preparing to unpack .../14-libjpeg8_8c-2ubuntu10_amd64.deb ...
+Unpacking libjpeg8:amd64 (8c-2ubuntu10) ........................................]
+Selecting previously unselected package liblcms2-2:amd64.
+Preparing to unpack .../15-liblcms2-2_2.12~rc1-2build2_amd64.deb ...
+Unpacking liblcms2-2:amd64 (2.12~rc1-2build2) ...
+Selecting previously unselected package liblqr-1-0:amd64........................]
+Preparing to unpack .../16-liblqr-1-0_0.4.2-2.1_amd64.deb ...
+Unpacking liblqr-1-0:amd64 (0.4.2-2.1) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../17-libltdl7_2.4.6-15build2_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.6-15build2) ......................................]
+Selecting previously unselected package libopenjp2-7:amd64.
+Preparing to unpack .../18-libopenjp2-7_2.4.0-6_amd64.deb ...
+Unpacking libopenjp2-7:amd64 (2.4.0-6) ...
+Selecting previously unselected package libdeflate0:amd64.
+Preparing to unpack .../19-libdeflate0_1.10-2_amd64.deb ...
+Unpacking libdeflate0:amd64 (1.10-2) ...........................................]
+Selecting previously unselected package libwebp7:amd64.
+Preparing to unpack .../20-libwebp7_1.2.2-2ubuntu0.22.04.2_amd64.deb ...
+Unpacking libwebp7:amd64 (1.2.2-2ubuntu0.22.04.2) ...
+Selecting previously unselected package libtiff5:amd64..........................]
+Preparing to unpack .../21-libtiff5_4.3.0-6ubuntu0.8_amd64.deb ...
+Unpacking libtiff5:amd64 (4.3.0-6ubuntu0.8) ...
+Selecting previously unselected package libwebpdemux2:amd64.
+Preparing to unpack .../22-libwebpdemux2_1.2.2-2ubuntu0.22.04.2_amd64.deb ...
+Unpacking libwebpdemux2:amd64 (1.2.2-2ubuntu0.22.04.2) .........................]
+Selecting previously unselected package libwebpmux3:amd64.
+Preparing to unpack .../23-libwebpmux3_1.2.2-2ubuntu0.22.04.2_amd64.deb ...
+Unpacking libwebpmux3:amd64 (1.2.2-2ubuntu0.22.04.2) ...
+Selecting previously unselected package imagemagick-6-common....................]
+Preparing to unpack .../24-imagemagick-6-common_8%3a6.9.11.60+dfsg-1.3ubuntu0.22.04.3_all.deb ...
+Unpacking imagemagick-6-common (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...
+Selecting previously unselected package libmagickcore-6.q16-6:amd64.
+Preparing to unpack .../25-libmagickcore-6.q16-6_8%3a6.9.11.60+dfsg-1.3ubuntu0.22.04.3_amd64.deb ...
+Unpacking libmagickcore-6.q16-6:amd64 (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...
+Selecting previously unselected package libmagickwand-6.q16-6:amd64.
+Preparing to unpack .../26-libmagickwand-6.q16-6_8%3a6.9.11.60+dfsg-1.3ubuntu0.22.04.3_amd64.deb ...
+Unpacking libmagickwand-6.q16-6:amd64 (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...
+Selecting previously unselected package poppler-data.
+Preparing to unpack .../27-poppler-data_0.4.11-1_all.deb ...
+Unpacking poppler-data (0.4.11-1) ...
+Selecting previously unselected package fontconfig.
+Preparing to unpack .../28-fontconfig_2.13.1-4.2ubuntu5_amd64.deb ...
+Unpacking fontconfig (2.13.1-4.2ubuntu5) ...
+Selecting previously unselected package fonts-noto-mono.
+Preparing to unpack .../29-fonts-noto-mono_20201225-1build1_all.deb ...
+Unpacking fonts-noto-mono (20201225-1build1) ...
+Selecting previously unselected package libgs9-common.
+Preparing to unpack .../30-libgs9-common_9.55.0~dfsg1-0ubuntu5.6_all.deb ...
+Unpacking libgs9-common (9.55.0~dfsg1-0ubuntu5.6) ...
+Selecting previously unselected package libavahi-common-data:amd64.
+Preparing to unpack .../31-libavahi-common-data_0.8-5ubuntu5.2_amd64.deb ...
+Unpacking libavahi-common-data:amd64 (0.8-5ubuntu5.2) ...
+Selecting previously unselected package libavahi-common3:amd64.
+Preparing to unpack .../32-libavahi-common3_0.8-5ubuntu5.2_amd64.deb ...
+Unpacking libavahi-common3:amd64 (0.8-5ubuntu5.2) ...
+Selecting previously unselected package libavahi-client3:amd64.
+Preparing to unpack .../33-libavahi-client3_0.8-5ubuntu5.2_amd64.deb ...
+Unpacking libavahi-client3:amd64 (0.8-5ubuntu5.2) ...
+Selecting previously unselected package libcups2:amd64.
+Preparing to unpack .../34-libcups2_2.4.1op1-1ubuntu4.7_amd64.deb ...
+Unpacking libcups2:amd64 (2.4.1op1-1ubuntu4.7) ...
+Selecting previously unselected package libidn12:amd64.
+Preparing to unpack .../35-libidn12_1.38-4ubuntu1_amd64.deb ...
+Unpacking libidn12:amd64 (1.38-4ubuntu1) ...
+Selecting previously unselected package libijs-0.35:amd64.
+Preparing to unpack .../36-libijs-0.35_0.35-15build2_amd64.deb ...
+Unpacking libijs-0.35:amd64 (0.35-15build2) ...
+Selecting previously unselected package libjbig2dec0:amd64.
+Preparing to unpack .../37-libjbig2dec0_0.19-3build2_amd64.deb ...
+Unpacking libjbig2dec0:amd64 (0.19-3build2) ...
+Selecting previously unselected package libpaper1:amd64.
+Unpacking libpaper1:amd64 (1.1.28build2) .......................................]
+Selecting previously unselected package libgs9:amd64.
+Preparing to unpack .../39-libgs9_9.55.0~dfsg1-0ubuntu5.6_amd64.deb ...
+Unpacking libgs9:amd64 (9.55.0~dfsg1-0ubuntu5.6) ...
+Selecting previously unselected package ghostscript.
+Preparing to unpack .../40-ghostscript_9.55.0~dfsg1-0ubuntu5.6_amd64.deb ...
+Unpacking ghostscript (9.55.0~dfsg1-0ubuntu5.6) ...
+Selecting previously unselected package grap.
+Preparing to unpack .../41-grap_1.46-1_amd64.deb ...
+Unpacking grap (1.46-1) ...
+Selecting previously unselected package x11-common.
+Preparing to unpack .../42-x11-common_1%3a7.7+23ubuntu2_all.deb ...
+Unpacking x11-common (1:7.7+23ubuntu2) ...
+Selecting previously unselected package libice6:amd64.
+Preparing to unpack .../43-libice6_2%3a1.0.10-1build2_amd64.deb ...
+Unpacking libice6:amd64 (2:1.0.10-1build2) ...
+Selecting previously unselected package libsm6:amd64.
+Preparing to unpack .../44-libsm6_2%3a1.2.3-1build2_amd64.deb ...
+Unpacking libsm6:amd64 (2:1.2.3-1build2) ...
+Selecting previously unselected package libxt6:amd64.
+Preparing to unpack .../45-libxt6_1%3a1.2.1-1_amd64.deb ...
+Unpacking libxt6:amd64 (1:1.2.1-1) ...
+Selecting previously unselected package libxmu6:amd64.
+Preparing to unpack .../46-libxmu6_2%3a1.1.3-3_amd64.deb ...
+Unpacking libxmu6:amd64 (2:1.1.3-3) ...
+Selecting previously unselected package libxpm4:amd64.
+Preparing to unpack .../47-libxpm4_1%3a3.5.12-1ubuntu0.22.04.2_amd64.deb ...
+Unpacking libxpm4:amd64 (1:3.5.12-1ubuntu0.22.04.2) ...
+Selecting previously unselected package libxaw7:amd64.
+Preparing to unpack .../48-libxaw7_2%3a1.0.14-1_amd64.deb ...
+Unpacking libxaw7:amd64 (2:1.0.14-1) ...
+Selecting previously unselected package groff.
+Preparing to unpack .../49-groff_1.22.4-8build1_amd64.deb ...
+Unpacking groff (1.22.4-8build1) ...
+Selecting previously unselected package gsfonts.
+Preparing to unpack .../50-gsfonts_1%3a8.11+urwcyr1.0.7~pre44-4.5_all.deb ...
+Unpacking gsfonts (1:8.11+urwcyr1.0.7~pre44-4.5) ...
+Selecting previously unselected package hicolor-icon-theme.
+Preparing to unpack .../51-hicolor-icon-theme_0.17-2_all.deb ...
+Unpacking hicolor-icon-theme (0.17-2) ...
+Selecting previously unselected package imagemagick-6.q16.
+Unpacking imagemagick-6.q16 (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ..............] _aSelecting previously unselected package imagemagick.
+Preparing to unpack .../53-imagemagick_8%3a6.9.11.60+dfsg-1.3ubuntu0.22.04.3_amd64.deb ...
+Unpacking imagemagick (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...
+Selecting previously unselected package libpixman-1-0:amd64.....................]
+Preparing to unpack .../54-libpixman-1-0_0.40.0-1ubuntu0.22.04.1_amd64.deb ...
+Unpacking libpixman-1-0:amd64 (0.40.0-1ubuntu0.22.04.1) ...
+Selecting previously unselected package libxcb-render0:amd64.
+Preparing to unpack .../55-libxcb-render0_1.14-3ubuntu3_amd64.deb ...
+Unpacking libxcb-render0:amd64 (1.14-3ubuntu3) .................................]
+Selecting previously unselected package libxcb-shm0:amd64.
+Preparing to unpack .../56-libxcb-shm0_1.14-3ubuntu3_amd64.deb ...
+Unpacking libxcb-shm0:amd64 (1.14-3ubuntu3) ...
+Selecting previously unselected package libxrender1:amd64.
+Preparing to unpack .../57-libxrender1_1%3a0.9.10-1build4_amd64.deb ...
+Unpacking libxrender1:amd64 (1:0.9.10-1build4) .................................]
+Selecting previously unselected package libcairo2:amd64.
+Preparing to unpack .../58-libcairo2_1.16.0-5ubuntu2_amd64.deb ...
+Unpacking libcairo2:amd64 (1.16.0-5ubuntu2) ...
+Selecting previously unselected package libdatrie1:amd64........................]
+Preparing to unpack .../59-libdatrie1_0.2.13-2_amd64.deb ...
+Unpacking libdatrie1:amd64 (0.2.13-2) ...
+Selecting previously unselected package libdjvulibre-text.
+Preparing to unpack .../60-libdjvulibre-text_3.5.28-2build2_all.deb ...
+Unpacking libdjvulibre-text (3.5.28-2build2) ...................................]
+Selecting previously unselected package libdjvulibre21:amd64.
+Preparing to unpack .../61-libdjvulibre21_3.5.28-2build2_amd64.deb ...
+Unpacking libdjvulibre21:amd64 (3.5.28-2build2) ...
+Selecting previously unselected package libgraphite2-3:amd64....................]
+Preparing to unpack .../62-libgraphite2-3_1.3.14-1build2_amd64.deb ...
+Unpacking libgraphite2-3:amd64 (1.3.14-1build2) ...
+Selecting previously unselected package libharfbuzz0b:amd64.
+Preparing to unpack .../63-libharfbuzz0b_2.7.4-1ubuntu3.1_amd64.deb ...
+Unpacking libharfbuzz0b:amd64 (2.7.4-1ubuntu3.1) ...............................]
+Selecting previously unselected package libilmbase25:amd64.
+Preparing to unpack .../64-libilmbase25_2.5.7-2_amd64.deb ...
+Unpacking libilmbase25:amd64 (2.5.7-2) ...
+Selecting previously unselected package libjxr0:amd64...........................]
+Preparing to unpack .../65-libjxr0_1.2~git20170615.f752187-5_amd64.deb ...
+Unpacking libjxr0:amd64 (1.2~git20170615.f752187-5) ...
+Selecting previously unselected package libjxr-tools.
+Preparing to unpack .../66-libjxr-tools_1.2~git20170615.f752187-5_amd64.deb ...
+Unpacking libjxr-tools (1.2~git20170615.f752187-5) ...
+Selecting previously unselected package libopenexr25:amd64......................]
+Preparing to unpack .../67-libopenexr25_2.5.7-1_amd64.deb ...
+Unpacking libopenexr25:amd64 (2.5.7-1) ...
+Selecting previously unselected package libthai-data.
+Preparing to unpack .../68-libthai-data_0.1.29-1build1_all.deb ...
+Unpacking libthai-data (0.1.29-1build1) ...#....................................]
+Selecting previously unselected package libthai0:amd64.
+Preparing to unpack .../69-libthai0_0.1.29-1build1_amd64.deb ...
+Unpacking libthai0:amd64 (0.1.29-1build1) ...
+Selecting previously unselected package libpango-1.0-0:amd64....................]
+Preparing to unpack .../70-libpango-1.0-0_1.50.6+ds-2ubuntu1_amd64.deb ...
+Unpacking libpango-1.0-0:amd64 (1.50.6+ds-2ubuntu1) ...
+Selecting previously unselected package libpangoft2-1.0-0:amd64.
+Preparing to unpack .../71-libpangoft2-1.0-0_1.50.6+ds-2ubuntu1_amd64.deb ...
+Unpacking libpangoft2-1.0-0:amd64 (1.50.6+ds-2ubuntu1) .........................]
+Selecting previously unselected package libpangocairo-1.0-0:amd64.
+Preparing to unpack .../72-libpangocairo-1.0-0_1.50.6+ds-2ubuntu1_amd64.deb ...
+Unpacking libpangocairo-1.0-0:amd64 (1.50.6+ds-2ubuntu1) ...
+Selecting previously unselected package libwmflite-0.2-7:amd64..................]
+Preparing to unpack .../73-libwmflite-0.2-7_0.2.12-5ubuntu1_amd64.deb ...
+Unpacking libwmflite-0.2-7:amd64 (0.2.12-5ubuntu1) ...
+Selecting previously unselected package libmagickcore-6.q16-6-extra:amd64.
+Preparing to unpack .../74-libmagickcore-6.q16-6-extra_8%3a6.9.11.60+dfsg-1.3ubuntu0.22.04.3_amd64.deb ...
+Unpacking libmagickcore-6.q16-6-extra:amd64 (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...
+Selecting previously unselected package libnetpbm10.
+Preparing to unpack .../75-libnetpbm10_2%3a10.0-15.4_amd64.deb ...
+Unpacking libnetpbm10 (2:10.0-15.4) ...
+Selecting previously unselected package libpaper-utils.
+Preparing to unpack .../76-libpaper-utils_1.1.28build2_amd64.deb ...
+Unpacking libpaper-utils (1.1.28build2) ...####.................................]
+Selecting previously unselected package netpbm.
+Preparing to unpack .../77-netpbm_2%3a10.0-15.4_amd64.deb ...
+Unpacking netpbm (2:10.0-15.4) ...
+Selecting previously unselected package psutils.................................]
+Preparing to unpack .../78-psutils_1.17.dfsg-4_amd64.deb ...
+Unpacking psutils (1.17.dfsg-4) ...
+Setting up libgraphite2-3:amd64 (1.3.14-1build2) ...
+Setting up liblcms2-2:amd64 (2.12~rc1-2build2) .................................]
+Setting up libpixman-1-0:amd64 (0.40.0-1ubuntu0.22.04.1) .......................]
+Setting up libpaper1:amd64 (1.1.28build2) ...
+Progress: [ 52%] [################################..............................]
+Creating config file /etc/papersize with new version
+Setting up libaom3:amd64 (3.3.0-1) ...
+Setting up imagemagick-6-common (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...
+Setting up fonts-noto-mono (20201225-1build1) ...##.............................]
+Setting up libxpm4:amd64 (1:3.5.12-1ubuntu0.22.04.2) ...........................]
+Setting up hicolor-icon-theme (0.17-2) ...
+Setting up libwmflite-0.2-7:amd64 (0.2.12-5ubuntu1) ............................]
+Setting up libxrender1:amd64 (1:0.9.10-1build4) ...#............................]
+Setting up libdatrie1:amd64 (0.2.13-2) ...
+Setting up grap (1.46-1) ...#########################...........................]
+Setting up libxcb-render0:amd64 (1.14-3ubuntu3) ...##...........................]
+Setting up libijs-0.35:amd64 (0.35-15build2) ...
+Setting up libjxr0:amd64 (1.2~git20170615.f752187-5) ...........................]
+Setting up x11-common (1:7.7+23ubuntu2) ...
+Setting up libdeflate0:amd64 (1.10-2) ...##############.........................]
+Setting up libilmbase25:amd64 (2.5.7-2) ...############.........................]
+Setting up libxcb-shm0:amd64 (1.14-3ubuntu3) ...
+Setting up libpaper-utils (1.1.28build2) ...############........................]
+Setting up libnetpbm10 (2:10.0-15.4) ...#################.......................]
+Setting up fonts-urw-base35 (20200910-1) ...
+Setting up libgomp1:amd64 (12.3.0-1ubuntu1~22.04) ...####.......................]
+Setting up libjbig0:amd64 (2.1-3.1ubuntu0.22.04.1) ...
+Setting up poppler-data (0.4.11-1) ...####################......................]
+Setting up libopenexr25:amd64 (2.5.7-1) ...################.....................]
+Setting up libfreetype6:amd64 (2.11.1+dfsg-1ubuntu0.2) ...
+Setting up libjbig2dec0:amd64 (0.19-3build2) ...###########.....................]
+Setting up gsfonts (1:8.11+urwcyr1.0.7~pre44-4.5) ...#######....................]
+Setting up libavahi-common-data:amd64 (0.8-5ubuntu5.2) ...
+Setting up libidn12:amd64 (1.38-4ubuntu1) ...###############....................]
+Setting up libjpeg-turbo8:amd64 (2.1.2-0ubuntu1) ...#########...................]
+Setting up libltdl7:amd64 (2.4.6-15build2) ...
+Setting up libfftw3-double3:amd64 (3.3.8-2ubuntu8) ...########..................]
+Setting up libx265-199:amd64 (3.5-2) ...
+Setting up libwebp7:amd64 (1.2.2-2ubuntu0.22.04.2) ...########..................]
+Setting up liblqr-1-0:amd64 (0.4.2-2.1) ...####################.................]
+Setting up libopenjp2-7:amd64 (2.4.0-6) ...
+Setting up libharfbuzz0b:amd64 (2.7.4-1ubuntu3.1) ...##########.................]
+Setting up libthai-data (0.1.29-1build1) ...####################................]
+Setting up fonts-droid-fallback (1:6.0.1r16-1.1build1) ...
+Setting up libdjvulibre-text (3.5.28-2build2) ...################...............]
+Setting up libdav1d5:amd64 (0.9.2-1) ...
+Setting up libde265-0:amd64 (1.0.8-1ubuntu0.3) ...###############...............]
+Setting up libwebpmux3:amd64 (1.2.2-2ubuntu0.22.04.2) ...#########..............]
+Setting up psutils (1.17.dfsg-4) ...
+Setting up libjpeg8:amd64 (8c-2ubuntu10) ...#######################.............]
+Setting up libgs9-common (9.55.0~dfsg1-0ubuntu5.6) ...#############.............]
+Setting up libice6:amd64 (2:1.0.10-1build2) ...
+Setting up libjxr-tools (1.2~git20170615.f752187-5) ...#############............]
+Setting up fontconfig-config (2.13.1-4.2ubuntu5) ...################............]
+Setting up libwebpdemux2:amd64 (1.2.2-2ubuntu0.22.04.2) ...
+Setting up libheif1:amd64 (1.12.0-2build1) ...#######################...........]
+Setting up libdjvulibre21:amd64 (3.5.28-2build2) ...
+Setting up libavahi-common3:amd64 (0.8-5ubuntu5.2) ...################..........]
+Setting up libthai0:amd64 (0.1.29-1build1) ...########################..........]
+Setting up libtiff5:amd64 (4.3.0-6ubuntu0.8) ...
+Setting up libfontconfig1:amd64 (2.13.1-4.2ubuntu5) ...################.........]
+Setting up libsm6:amd64 (2:1.2.3-1build2) ...##########################.........]
+Setting up libavahi-client3:amd64 (0.8-5ubuntu5.2) ...
+Setting up fontconfig (2.13.1-4.2ubuntu5) ...###########################........]
+Setting up libcairo2:amd64 (1.16.0-5ubuntu2) ...#########################.......]
+Setting up libmagickcore-6.q16-6:amd64 (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...]
+Setting up netpbm (2:10.0-15.4) ...
+Setting up libxt6:amd64 (1:1.2.1-1) ...###################################......]
+Setting up libcups2:amd64 (2.4.1op1-1ubuntu4.7) ...########################.....]
+Setting up libmagickwand-6.q16-6:amd64 (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...
+Setting up libpangoft2-1.0-0:amd64 (1.50.6+ds-2ubuntu1) ...################.....]
+Setting up libpangocairo-1.0-0:amd64 (1.50.6+ds-2ubuntu1) ...###############....]
+Setting up libxmu6:amd64 (2:1.1.3-3) ...
+Setting up libgs9:amd64 (9.55.0~dfsg1-0ubuntu5.6) ...########################...]
+Setting up libmagickcore-6.q16-6-extra:amd64 (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...
+Setting up libxaw7:amd64 (2:1.0.14-1) ...####################################...]
+Setting up imagemagick-6.q16 (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...########..]
+update-alternatives: using /usr/bin/compare-im6.q16 to provide /usr/bin/compare (compare) in auto mode
+update-alternatives: using /usr/bin/compare-im6.q16 to provide /usr/bin/compare-im6 (compare-im6) in auto mode
+update-alternatives: using /usr/bin/animate-im6.q16 to provide /usr/bin/animate (animate) in auto mode
+update-alternatives: using /usr/bin/animate-im6.q16 to provide /usr/bin/animate-im6 (animate-im6) in auto mode
+update-alternatives: using /usr/bin/convert-im6.q16 to provide /usr/bin/convert (convert) in auto mode
+update-alternatives: using /usr/bin/convert-im6.q16 to provide /usr/bin/convert-im6 (convert-im6) in auto mode
+update-alternatives: using /usr/bin/composite-im6.q16 to provide /usr/bin/composite (composite) in auto mode
+update-alternatives: using /usr/bin/composite-im6.q16 to provide /usr/bin/composite-im6 (composite-im6) in auto mode
+update-alternatives: using /usr/bin/conjure-im6.q16 to provide /usr/bin/conjure (conjure) in auto mode
+update-alternatives: using /usr/bin/conjure-im6.q16 to provide /usr/bin/conjure-im6 (conjure-im6) in auto mode
+update-alternatives: using /usr/bin/import-im6.q16 to provide /usr/bin/import (import) in auto mode
+update-alternatives: using /usr/bin/import-im6.q16 to provide /usr/bin/import-im6 (import-im6) in auto mode
+update-alternatives: using /usr/bin/identify-im6.q16 to provide /usr/bin/identify (identify) in auto mode
+update-alternatives: using /usr/bin/identify-im6.q16 to provide /usr/bin/identify-im6 (identify-im6) in auto mode
+update-alternatives: using /usr/bin/stream-im6.q16 to provide /usr/bin/stream (stream) in auto mode
+update-alternatives: using /usr/bin/stream-im6.q16 to provide /usr/bin/stream-im6 (stream-im6) in auto mode
+update-alternatives: using /usr/bin/display-im6.q16 to provide /usr/bin/display (display) in auto mode
+update-alternatives: using /usr/bin/display-im6.q16 to provide /usr/bin/display-im6 (display-im6) in auto mode
+update-alternatives: using /usr/bin/montage-im6.q16 to provide /usr/bin/montage (montage) in auto mode
+update-alternatives: using /usr/bin/montage-im6.q16 to provide /usr/bin/montage-im6 (montage-im6) in auto mode
+update-alternatives: using /usr/bin/mogrify-im6.q16 to provide /usr/bin/mogrify (mogrify) in auto mode
+update-alternatives: using /usr/bin/mogrify-im6.q16 to provide /usr/bin/mogrify-im6 (mogrify-im6) in auto mode
+Setting up imagemagick (8:6.9.11.60+dfsg-1.3ubuntu0.22.04.3) ...###############.]
+Processing triggers for libc-bin (2.35-0ubuntu3.4) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for install-info (6.8-4build1) ...
+sachin@DESKTOP-MTQNNVD:/home$ grap "Hello"
+Can't open Hello No such file or directory
+sachin@DESKTOP-MTQNNVD:/home$ man find
+sachin@DESKTOP-MTQNNVD:/home$ ls
+LinuxAssignment  sachin
+sachin@DESKTOP-MTQNNVD:/home$ cd LinuxAssignment
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ cd docs/
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ grep -l Hello file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ grep Hello
+Hello Ubuntu .........
+Hello Ubuntu .........
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ date
+Fri Mar  8 02:48:22 IST 2024
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ifconfig -a
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.21.242.25  netmask 255.255.240.0  broadcast 172.21.255.255
+        inet6 fe80::215:5dff:fe1e:cb3b  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:1e:cb:3b  txqueuelen 1000  (Ethernet)
+        RX packets 13655  bytes 40102536 (40.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 6176  bytes 555739 (555.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ifconifg -a
+Command 'ifconifg' not found, did you mean:
+  command 'ifconfig' from deb net-tools (1.60+git20181103.0eebece-1ubuntu5)
+Try: sudo apt install <deb name>
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ hostname -l
+hostname: invalid option -- 'l'
+Usage: hostname [-b] {hostname|-F file}         set host name (from file)
+       hostname [-a|-A|-d|-f|-i|-I|-s|-y]       display formatted name
+       hostname                                 display host name
+
+       {yp,nis,}domainname {nisdomain|-F file}  set NIS domain name (from file)
+       {yp,nis,}domainname                      display NIS domain name
+
+       dnsdomainname                            display dns domain name
+
+       hostname -V|--version|-h|--help          print info and exit
+
+Program name:
+       {yp,nis,}domainname=hostname -y
+       dnsdomainname=hostname -d
+
+Program options:
+    -a, --alias            alias names
+    -A, --all-fqdns        all long host names (FQDNs)
+    -b, --boot             set default hostname if none available
+    -d, --domain           DNS domain name
+    -f, --fqdn, --long     long host name (FQDN)
+    -F, --file             read host name or NIS domain name from given file
+    -i, --ip-address       addresses for the host name
+    -I, --all-ip-addresses all addresses for the host
+    -s, --short            short host name
+    -y, --yp, --nis        NIS/YP domain name
+
+Description:
+   This command can get or set the host name or the NIS domain name. You can
+   also get the DNS domain or the FQDN (fully qualified domain name).
+   Unless you are using bind or NIS for host lookups you can change the
+   FQDN (Fully Qualified Domain Name) and the DNS domain name (which is
+   part of the FQDN) in the /etc/hosts file.
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ hostname
+DESKTOP-MTQNNVD
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:1e:cb:3b brd ff:ff:ff:ff:ff:ff
+    inet 172.21.242.25/20 brd 172.21.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe1e:cb3b/64 scope link
+       valid_lft forever preferred_lft forever
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:1e:cb:3b brd ff:ff:ff:ff:ff:ff
+    inet 172.21.242.25/20 brd 172.21.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe1e:cb3b/64 scope link
+       valid_lft forever preferred_lft forever
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ sudo apt install net-tools
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+net-tools is already the newest version (1.60+git20181103.0eebece-1ubuntu5).
+0 upgraded, 0 newly installed, 0 to remove and 79 not upgraded.
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ sudo apt install net-tools
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+net-tools is already the newest version (1.60+git20181103.0eebece-1ubuntu5).
+0 upgraded, 0 newly installed, 0 to remove and 79 not upgraded.
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.21.242.25  netmask 255.255.240.0  broadcast 172.21.255.255
+        inet6 fe80::215:5dff:fe1e:cb3b  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:1e:cb:3b  txqueuelen 1000  (Ethernet)
+        RX packets 13671  bytes 40106008 (40.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 6176  bytes 555739 (555.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ cd ..
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ sudo apt install
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+0 upgraded, 0 newly installed, 0 to remove and 79 not upgraded.
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ sudo apt intall zip
+E: Invalid operation intall
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ sudo apt install zip
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+zip is already the newest version (3.0-12build2).
+0 upgraded, 0 newly installed, 0 to remove and 79 not upgraded.
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ zip -v
+Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license.
+This is Zip 3.0 (July 5th 2008), by Info-ZIP.
+Currently maintained by E. Gordon.  Please send bug reports to
+the authors using the web page at www.info-zip.org; see README for details.
+
+Latest sources and executables are at ftp://ftp.info-zip.org/pub/infozip,
+as of above date; see http://www.info-zip.org/ for other sites.
+
+Compiled with gcc 11.2.0 for Unix (Linux ELF).
+
+Zip special compilation options:
+        USE_EF_UT_TIME       (store Universal Time)
+        BZIP2_SUPPORT        (bzip2 library version 1.0.8, 13-Jul-2019)
+            bzip2 code and library copyright (c) Julian R Seward
+            (See the bzip2 license for terms of use)
+        SYMLINK_SUPPORT      (symbolic links supported)
+        LARGE_FILE_SUPPORT   (can read and write large files on file system)
+        ZIP64_SUPPORT        (use Zip64 to store large files in archives)
+        UNICODE_SUPPORT      (store and read UTF-8 Unicode paths)
+        STORE_UNIX_UIDs_GIDs (store UID/GID sizes/values using new extra field)
+        UIDGID_NOT_16BIT     (old Unix 16-bit UID/GID extra field not used)
+        [encryption, version 2.91 of 05 Jan 2007] (modified for Zip 3)
+
+Encryption notice:
+        The encryption code of this program is not copyrighted and is
+        put in the public domain.  It was originally written in Europe
+        and, to the best of our knowledge, can be freely distributed
+        in both source and object forms from any country, including
+        the USA under License Exception TSU of the U.S. Export
+        Administration Regulations (section 740.13(e)) of 6 June 2002.
+
+Zip environment options:
+             ZIP:  [none]
+          ZIPOPT:  [none]
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ zip docs
+
+zip error: Nothing to do! (docs.zip)
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ zip -r docs.zip docs
+  adding: docs/ (stored 0%)
+  adding: docs/file2.txt (deflated 26%)
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+docs  docs.zip  file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ unzip -z docs.zip docs1
+Archive:  docs.zip
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+docs  docs.zip  file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ zip -r docs1.zip docs
+  adding: docs/ (stored 0%)
+  adding: docs/file2.txt (deflated 26%)
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+docs  docs.zip  docs1.zip  file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ unzip -z docs1.zip docs1
+Archive:  docs1.zip
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ mkdir docs1
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ unzip -z docs1.zip docs1
+Archive:  docs1.zip
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+docs  docs.zip  docs1  docs1.zip  file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls -l -a
+total 24
+drwxrwxrwx 4 root   root   4096 Mar  8 02:59 .
+drwxr-xr-x 4 root   root   4096 Mar  7 19:48 ..
+drwxr-xr-x 2 sachin sachin 4096 Mar  8 01:58 docs
+-rw-r--r-- 1 sachin sachin  336 Mar  8 02:56 docs.zip
+drwxr-xr-x 2 sachin sachin 4096 Mar  8 02:59 docs1
+-rw-r--r-- 1 sachin sachin  336 Mar  8 02:58 docs1.zip
+-rw-r--r-- 1 sachin sachin    0 Mar  8 01:50 file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ tree
+.
+├── docs
+│   └── file2.txt
+├── docs.zip
+├── docs1
+├── docs1.zip
+└── file1.txt
+
+2 directories, 4 files
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ unzip docs.zip -d docs1
+Archive:  docs.zip
+   creating: docs1/docs/
+  inflating: docs1/docs/file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ tree
+.
+├── docs
+│   └── file2.txt
+├── docs.zip
+├── docs1
+│   └── docs
+│       └── file2.txt
+├── docs1.zip
+└── file1.txt
+
+3 directories, 5 files
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ cd docs
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ vi file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ cat file1.txt
+Viva la Vida
+You are going to grab high package
+just be a consistents
+
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file1.txt  file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file1.txt  file2.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ cd ..
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ ls
+docs  docs.zip  docs1  docs1.zip  file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ sed 's/file/text file/g' file1.txt
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$ tree
+.
+├── docs
+│   ├── file1.txt
+│   └── file2.txt
+├── docs.zip
+├── docs1
+│   └── docs
+│       └── file2.txt
+├── docs1.zip
+└── file1.txt
+
+3 directories, 6 files
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment$  cd docs
+sachin@DESKTOP-MTQNNVD:/home/LinuxAssignment/docs$ ls
+file1.txt  file2.txt
